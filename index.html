@@ -13,17 +13,23 @@
             <nav>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#7grado">7° Grado</a></li>
-                    <li><a href="#8grado">8° Grado</a></li>
-                    <li><a href="#9grado">9° Grado</a></li>
-                    <li><a href="#1ano">1° Año</a></li>
-                    <li><a href="#2ano">2° Año</a></li>
                     <li><a href="#recursos">Recursos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <div class="floating-menu">
+        <button id="grades-menu">Grados</button>
+        <div id="grades-dropdown" class="dropdown-content">
+            <a href="#7grado">7° Grado</a>
+            <a href="#8grado">8° Grado</a>
+            <a href="#9grado">9° Grado</a>
+            <a href="#1ano">1° Año</a>
+            <a href="#2ano">2° Año</a>
+        </div>
+    </div>
 
     <section id="inicio" class="section">
         <div class="container">
@@ -123,5 +129,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('grades-menu').addEventListener('click', function() {
+            document.getElementById('grades-dropdown').classList.toggle('show');
+        });
+
+        window.onclick = function(event) {
+            if (!event.target.matches('#grades-menu')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
