@@ -73,6 +73,10 @@
                         </ul>
                     </div>
                 </div>
+                <div class="carousel-nav">
+                    <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+                    <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+                </div>
             </div>
         </div>
     </section>
@@ -115,17 +119,31 @@
     </footer>
 
     <script>
-        const carouselInner = document.querySelector('.carousel-inner');
         let currentIndex = 0;
         const items = document.querySelectorAll('.carousel-item');
-        const itemWidth = items[0].offsetWidth;
         const numItems = items.length;
+        const itemWidth = items[0].offsetWidth;
+        const carouselInner = document.querySelector('.carousel-inner');
 
         function updateCarousel() {
             carouselInner.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
         }
 
-        function handleMouseMovement(event) {
+        function nextSlide() {
+            if (currentIndex < numItems - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+
+        carouselInner.addEventListener('mousemove', function(event) {
             const rect = carouselInner.getBoundingClientRect();
             const mousePos = event.clientX - rect.left;
             const itemIndex = Math.floor(mousePos / itemWidth);
@@ -133,9 +151,9 @@
                 currentIndex = itemIndex;
                 updateCarousel();
             }
-        }
+        });
 
-        carouselInner.addEventListener('mousemove', handleMouseMovement);
+        updateCarousel(); // Inicializar el carrusel
     </script>
 </body>
 </html>
