@@ -33,49 +33,55 @@
             <div class="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item">
-                        <h3>7° Grado</h3>
-                        <ul>
-                            <li><a href="#">Tecnologías del Día a Día</a></li>
-                            <li><a href="#">Ecosistema</a></li>
-                            <li><a href="#">Sistemas Corporales</a></li>
-                        </ul>
+                        <div class="card">
+                            <h3>7° Grado</h3>
+                            <ul>
+                                <li><a href="#">Tecnologías del Día a Día</a></li>
+                                <li><a href="#">Ecosistema</a></li>
+                                <li><a href="#">Sistemas Corporales</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <h3>8° Grado</h3>
-                        <ul>
-                            <li><a href="#">Física Básica</a></li>
-                            <li><a href="#">Química</a></li>
-                            <li><a href="#">Geología</a></li>
-                        </ul>
+                        <div class="card">
+                            <h3>8° Grado</h3>
+                            <ul>
+                                <li><a href="#">Física Básica</a></li>
+                                <li><a href="#">Química</a></li>
+                                <li><a href="#">Geología</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <h3>9° Grado</h3>
-                        <ul>
-                            <li><a href="#">Biología Celular</a></li>
-                            <li><a href="#">Astronomía</a></li>
-                            <li><a href="#">Ingeniería de Software Básica</a></li>
-                        </ul>
+                        <div class="card">
+                            <h3>9° Grado</h3>
+                            <ul>
+                                <li><a href="#">Biología Celular</a></li>
+                                <li><a href="#">Astronomía</a></li>
+                                <li><a href="#">Ingeniería de Software Básica</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <h3>1° Año</h3>
-                        <ul>
-                            <li><a href="#">Circuitos Eléctricos y Electrónicos</a></li>
-                            <li><a href="#">Biológica Molecular</a></li>
-                            <li><a href="#">Química Orgánica</a></li>
-                        </ul>
+                        <div class="card">
+                            <h3>1° Año</h3>
+                            <ul>
+                                <li><a href="#">Circuitos Eléctricos y Electrónicos</a></li>
+                                <li><a href="#">Biológica Molecular</a></li>
+                                <li><a href="#">Química Orgánica</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <h3>2° Año</h3>
-                        <ul>
-                            <li><a href="#">Energías Renovables</a></li>
-                            <li><a href="#">Biología Evolutiva</a></li>
-                            <li><a href="#">Robótica y Automatización</a></li>
-                        </ul>
+                        <div class="card">
+                            <h3>2° Año</h3>
+                            <ul>
+                                <li><a href="#">Energías Renovables</a></li>
+                                <li><a href="#">Biología Evolutiva</a></li>
+                                <li><a href="#">Robótica y Automatización</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-nav">
-                    <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
-                    <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
                 </div>
             </div>
         </div>
@@ -150,6 +156,14 @@
             if (itemIndex >= 0 && itemIndex < numItems && itemIndex !== currentIndex) {
                 currentIndex = itemIndex;
                 updateCarousel();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
             }
         });
 
