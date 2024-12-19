@@ -10,6 +10,9 @@ header {
     background-color: #4CAF50;
     color: white;
     padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 header .container {
@@ -57,6 +60,7 @@ nav ul li a:hover {
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    margin-top: 80px; /* Ajuste para evitar que se superponga con el header */
 }
 
 .section h2 {
@@ -125,4 +129,51 @@ form button {
 
 form button:hover {
     background-color: #45a049;
+}
+
+.floating-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+}
+
+.floating-menu button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.floating-menu button:hover {
+    background-color: #45a049;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
 }
