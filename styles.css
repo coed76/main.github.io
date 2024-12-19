@@ -146,15 +146,22 @@ form button:hover {
     min-width: 100%;
     box-sizing: border-box;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-item h3 {
     margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
 .carousel-item ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 .carousel-item ul li {
@@ -169,4 +176,29 @@ form button:hover {
 
 .carousel-item ul li a:hover {
     text-decoration: underline;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
