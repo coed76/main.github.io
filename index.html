@@ -3,96 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluaciones de Ciencia y Tecnología</title>
+    <title>Generador de Prompts para Imágenes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Evaluaciones de Ciencia y Tecnología</h1>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Generador de Prompts para Imágenes</h1>
+        </header>
+        <main>
+            <section class="inputs">
+                <label for="description">Descripción:</label>
+                <input type="text" id="description" placeholder="Descripción de la imagen">
 
-    <section id="grados" class="section">
-        <div class="container">
-            <h2>Grados</h2>
-            <div class="grados-container">
-                <div class="grado-card">
-                    <h3>7° Grado</h3>
-                    <ul>
-                        <li><a href="#">Tecnologías del Día a Día</a></li>
-                        <li><a href="#">Ecosistema</a></li>
-                        <li><a href="#">Sistemas Corporales</a></li>
-                    </ul>
-                </div>
-                <div class="grado-card">
-                    <h3>8° Grado</h3>
-                    <ul>
-                        <li><a href="#">Física Básica</a></li>
-                        <li><a href="#">Química</a></li>
-                        <li><a href="#">Geología</a></li>
-                    </ul>
-                </div>
-                <div class="grado-card">
-                    <h3>9° Grado</h3>
-                    <ul>
-                        <li><a href="#">Biología Celular</a></li>
-                        <li><a href="#">Astronomía</a></li>
-                        <li><a href="#">Ingeniería de Software Básica</a></li>
-                    </ul>
-                </div>
-                <div class="grado-card">
-                    <h3>1° Año</h3>
-                    <ul>
-                        <li><a href="#">Circuitos Eléctricos y Electrónicos</a></li>
-                        <li><a href="#">Biológica Molecular</a></li>
-                        <li><a href="#">Química Orgánica</a></li>
-                    </ul>
-                </div>
-                <div class="grado-card">
-                    <h3>2° Año</h3>
-                    <ul>
-                        <li><a href="#">Energías Renovables</a></li>
-                        <li><a href="#">Biología Evolutiva</a></li>
-                        <li><a href="#">Robótica y Automatización</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+                <label for="style">Estilo:</label>
+                <input type="text" id="style" placeholder="Estilo del arte (e.g., surrealismo, realismo)">
 
-    <footer>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#recursos">Recursos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-            <p>&copy; 2023 Evaluaciones de Ciencia y Tecnología. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="https://twitter.com/askvenice" target="_blank">Twitter/X</a> |
-                <a href="https://farcaster.xyz/venice-ai" target="_blank">Farcaster</a> |
-                <a href="https://instagram.com/tryvenice.ai" target="_blank">Instagram</a>
-            </div>
-        </div>
-    </footer>
+                <label for="details">Detalles:</label>
+                <input type="text" id="details" placeholder="Detalles específicos">
 
-    <script>
-        const gradoCards = document.querySelectorAll('.grado-card');
+                <label for="colorScheme">Esquema de Colores:</label>
+                <input type="text" id="colorScheme" placeholder="Esquema de colores (e.g., vibrante, oscuro)">
 
-        gradoCards.forEach((card) => {
-            card.addEventListener('mouseover', () => {
-                card.style.transform = 'scale(1.1)';
-                card.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
-            });
-
-            card.addEventListener('mouseout', () => {
-                card.style.transform = 'scale(1)';
-                card.style.boxShadow = 'none';
-            });
-        });
-    </script>
+                <label for="settings">Configuración:</label>
+                <input type="text" id="settings" placeholder="Configuración adicional (e.g., resolución, formato)">
+            </section>
+            <section class="buttons">
+                <button id="generate">Generar Prompt</button>
+            </section>
+            <section class="output">
+                <h2>Prompt Generado:</h2>
+                <textarea id="promptOutput" rows="5" readonly></textarea>
+            </section>
+        </main>
+    </div>
+    <script src="app.js" type="module"></script>
 </body>
 </html>
